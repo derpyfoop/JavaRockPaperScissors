@@ -45,9 +45,9 @@ public class RockPapaerScissors {
         int userScore = 0;
         int compScore = 0;
 
-        while (cont() != 1) {
+        do {
             String user = user();
-             String comp = comp();
+            String comp = comp();
 
             //User rock
             if (user == "Rock" && comp == "Scissors") {
@@ -82,12 +82,12 @@ public class RockPapaerScissors {
                         "Rock Paper Scissors", JOptionPane.INFORMATION_MESSAGE);
             } else if (user == "Scissors" && comp == "Scissors") {
                 JOptionPane.showMessageDialog(null, "IT's A TIE", "Rock Paper Scissors", JOptionPane.INFORMATION_MESSAGE);
-            } else if (user == "Scissors" && comp == "Scissors") {
+            } else if (user == "Scissors" && comp == "Rock") {
                 compScore++;
                 JOptionPane.showMessageDialog(null, "User score:" + userScore + "\nComputer score:" + compScore + "\nCOMPUTER WINS THIS ROUND!!!",
                         "Rock Paper Scissors", JOptionPane.INFORMATION_MESSAGE);
             }
-        }
+        } while(cont() != 1);
     }
 
     public static int cont() {
